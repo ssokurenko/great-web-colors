@@ -81,6 +81,13 @@ h1, h2, h3, h4 h5, h6 {
             font-size: 1.7em !important;
         }
     }
+    
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    
     /* Space out the masthead */
     .header {
         margin-bottom: 30px;
@@ -107,6 +114,10 @@ h1, h2, h3, h4 h5, h6 {
         color: $MAIN_THEME_COLOR !important;
     }
         
+}
+
+.footer {
+    border: none;
 }
 
 .colors {
