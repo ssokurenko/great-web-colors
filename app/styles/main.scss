@@ -41,7 +41,6 @@ h1, h2, h3, h4 h5, h6 {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
-    color: $MAIN_THEME_COLOR;
 }
 
 /* Custom page footer */
@@ -78,6 +77,9 @@ h1, h2, h3, h4 h5, h6 {
     .footer {
         padding-left: 0;
         padding-right: 0;
+        & h3 {
+            font-size: 1.7em !important;
+        }
     }
     /* Space out the masthead */
     .header {
@@ -90,6 +92,26 @@ h1, h2, h3, h4 h5, h6 {
 }
 
 /* Color collection custom styles */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.97) !important;
+    z-index: 1000;
+    border-bottom: 1px solid #fff;
+    & h3 {
+        padding: 10px;
+        font-size: 1.3em;
+        color: $MAIN_THEME_COLOR !important;
+    }
+        
+}
+
+.colors {
+    padding-top: 32px;
+}
 
 .color-item {
     content: " ";
