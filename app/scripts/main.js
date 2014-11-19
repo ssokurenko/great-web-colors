@@ -2,6 +2,32 @@
 var app = {};
 
 $(document).ready(function() {
+    displayColorItems();
+});
+
+// Displaying the list of items
+var displayColorItems = function(){
+    // Parsing the JSON list and appending the items
+    $.getJSON('../colors.json', function(data) {
+        
+        app.colors = data.colors;
+        
+        $.each(app.colors, function(index, color){
+                        
+            $('.colors').append('<div class="col-xs-4 col-sm-3 col-md-2"><div class="color-item" style="background-color: ' + color + ';"></div></div>');
+            if (index == 0){
+                $('.color-item').addClass('active');
+                updateCurrentColor(color);;
+            }
+        });
+        
+        // Handling item clicks
+        handleColorClicks();
+    });
+};
+
+// Handling color item clicks
+var handleColorClicks = function(){
     $('.color-item').on('click', function(event){
         // Preventing default action
         event.preventDefault();
@@ -16,11 +42,16 @@ $(document).ready(function() {
         app.currentColor = $(this).css('backgroundColor');
         
         // Setting the value for the indicator on the header
-        $('span.current-color').html(app.currentColor).css('color', app.currentColor);
+        updateCurrentColor(app.currentColor);
         
         return false;
     });
-});
+};
+
+// Updating current color indicator
+var updateCurrentColor = function(color){
+    $('span.current-color').html(color).css('color', color);
+};
 
 // Getting HEX value for background-color
 $.cssHooks.backgroundColor = {
