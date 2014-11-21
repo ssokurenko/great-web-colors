@@ -3,6 +3,7 @@ var app = {};
 
 $(document).ready(function() {
     displayColorItems();
+    handleCurrentColorClick();
 });
 
 // Displaying the list of items
@@ -52,6 +53,18 @@ var handleColorClicks = function(){
 var updateCurrentColor = function(color){
     $('span.current-color').hide().html(color).css('color', color).fadeIn();
 };
+
+// Hendling clicks on the current color incdicator
+var handleCurrentColorClick = function(){
+    $('.current-color').on('click', function(event){
+        // Preventing default action
+        event.preventDefault();
+        
+        var person = prompt("Selected color code:", $(this).html());
+        
+        return false;
+    });
+}
 
 // Getting HEX value for background-color
 $.cssHooks.backgroundColor = {
