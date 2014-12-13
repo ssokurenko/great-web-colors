@@ -1,4 +1,3 @@
-great-web-colors
-================
+# Collection of great colors for web sits and apps
 
-Collection of great web colors for sites and apps
+## [colors.html5space.org](http://colors.html5space.org/)
