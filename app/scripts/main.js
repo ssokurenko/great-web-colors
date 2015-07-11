@@ -9,19 +9,19 @@ $(document).ready(function() {
 // Displaying the list of items
 var displayColorItems = function(){
     // Parsing the JSON list and appending the items
-    $.getJSON('../colors.json', function(data) {
-        
+    $.getJSON('./colors.json', function(data) {
+
         app.colors = data.colors;
-        
+
         $.each(app.colors, function(index, color){
-                        
+
             $('.colors').append('<div class="col-xs-4 col-sm-3 col-md-2"><div class="color-item" style="background-color: ' + color + ';"></div></div>').hide().fadeIn();
             if (index == 0){
                 $('.color-item').addClass('active');
                 updateCurrentColor(color);;
             }
         });
-        
+
         // Handling item clicks
         handleColorClicks();
     });
@@ -32,19 +32,19 @@ var handleColorClicks = function(){
     $('.color-item').on('click', function(event){
         // Preventing default action
         event.preventDefault();
-        
+
         // Clearing .active class/state on all similar items
         $('.color-item.active').removeClass('active');
-        
+
         // Setting .active class/state for this item
         $(this).addClass('active');
-        
+
         // Getting current color value
         app.currentColor = $(this).css('backgroundColor');
-        
+
         // Setting the value for the indicator on the header
         updateCurrentColor(app.currentColor);
-        
+
         return false;
     });
 };
@@ -59,9 +59,9 @@ var handleCurrentColorClick = function(){
     $('.current-color').on('click', function(event){
         // Preventing default action
         event.preventDefault();
-        
+
         var person = prompt("Selected color code:", $(this).html());
-        
+
         return false;
     });
 }
