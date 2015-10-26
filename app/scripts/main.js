@@ -15,7 +15,7 @@ var displayColorItems = function(){
 
         $.each(app.colors, function(index, color){
 
-            $('.colors').append('<div class="col-xs-4 col-sm-3 col-md-2"><div class="color-item" style="background-color: ' + color + ';"></div></div>').hide().fadeIn();
+            $('.colors').append('<div class="col-xs-4 col-sm-3 col-md-2"><div class="color-item paper" style="background-color: ' + color + ';"></div></div>').hide().fadeIn();
             if (index == 0){
                 $('.color-item').addClass('active');
                 updateCurrentColor(color);;
@@ -51,7 +51,7 @@ var handleColorClicks = function(){
 
 // Updating current color indicator
 var updateCurrentColor = function(color){
-    $('span.current-color').hide().html(color).css('color', color).fadeIn();
+    $('.current-color').hide().html(color).css('color', color).fadeIn();
 };
 
 // Hendling clicks on the current color incdicator
