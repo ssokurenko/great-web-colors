@@ -16,10 +16,6 @@ var displayColorItems = function(){
         $.each(app.colors, function(index, color){
 
             $('.colors').append('<div class="col-xs-4 col-sm-3 col-md-2"><div class="color-item paper" style="background-color: #' + color + ';"></div></div>').hide().fadeIn();
-            if (index == 0){
-                $('.color-item').addClass('active');
-                updateCurrentColor(color);;
-            }
         });
 
         // Handling item clicks
