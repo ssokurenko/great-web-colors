@@ -15,7 +15,6 @@ $MAIN_THEME_COLOR: black;
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
     padding-bottom: 20px;
     color: black;
 }
@@ -101,18 +100,23 @@ a {
 
 .header {
     position: fixed;
-    top: 0;
+    top: -60px;
     width: 100%;
     height: 60px;
     background-color: #fff;
     background-color: rgba(255, 255, 255, 0.97) !important;
     z-index: 1000;
     border-bottom: 1px solid #fff;
+    transition: top 0.15s ease-in;
+    &.show {
+      top: 0;
+    }
 }
 
 .current-color {
     font-size: 1.5em;
     line-height: 0;
+    font-weight: 800;
 }
 
 .footer {
@@ -120,8 +124,13 @@ a {
 }
 
 .colors {
-    margin-top: 30px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .color-item {

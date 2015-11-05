@@ -26,20 +26,32 @@ var displayColorItems = function(){
 // Handling color item clicks
 var handleColorClicks = function(){
     $('.color-item').on('click', function(event){
-        // Preventing default action
-        event.preventDefault();
 
-        // Clearing .active class/state on all similar items
-        $('.color-item.active').removeClass('active');
+        // Hiding the header
+        $('.header').removeClass('show');
 
-        // Setting .active class/state for this item
-        $(this).addClass('active');
+        // Showing the next color
+        if (!$(this).hasClass('active')) {
+          // Clearing .active class/state on all similar items
+          $('.color-item.active').removeClass('active');
 
-        // Getting current color value
-        app.currentColor = $(this).css('backgroundColor');
+          // Setting .active class/state for this item
+          $(this).addClass('active');
 
-        // Setting the value for the indicator on the header
-        updateCurrentColor(app.currentColor);
+          // Getting current color value
+          app.currentColor = $(this).css('backgroundColor');
+
+          // Setting the value for the indicator on the header
+          updateCurrentColor(app.currentColor);
+
+          // Showing the header
+          setTimeout(function(){
+              $('.header').addClass('show');
+          }, 300);
+        } else {
+          // Removing class active for this color box
+          $(this).removeClass('active');
+        }
 
         return false;
     });
