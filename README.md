@@ -1,7 +1,6 @@
 # Collection of great colors for web design
 
-![Web Design Colors](/screenshot-web-colors-1.png)
-![Web Design Colors](/screenshot-web-colors-2.png)
+[![Web Design Colors](/screenshot-web-colors.png)](http://ssokurenko.github.io/great-web-colors/)
 
 ## Web App
 
