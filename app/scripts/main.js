@@ -2,9 +2,25 @@
 var app = {};
 
 $(document).ready(function() {
+    displayInformer();
     displayColorItems();
     handleCurrentColorClick();
 });
+
+// Displaying an informer on initial load
+var displayInformer = function(){
+  if (!localStorage.getItem('informed')) {
+    setTimeout(function(){
+      $('.current-color').addClass('informer').html('click a color box to see its code');
+      $('.header').addClass('show');
+      localStorage.setItem('informed', 1);
+      // Hiding the informer
+      setTimeout(function(){
+        $('.header').removeClass('show');
+      }, 3000)
+    }, 1000);
+  }
+};
 
 // Displaying the list of items
 var displayColorItems = function(){
@@ -59,7 +75,7 @@ var handleColorClicks = function(){
 
 // Updating current color indicator
 var updateCurrentColor = function(color){
-    $('.current-color').hide().html(color).css('color', color).fadeIn();
+    $('.current-color').removeClass('informer').hide().html(color).css('color', color).fadeIn();
 };
 
 // Hendling clicks on the current color incdicator
