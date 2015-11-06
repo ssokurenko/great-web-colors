@@ -5,6 +5,7 @@ $(document).ready(function() {
     displayInformer();
     displayColorItems();
     handleCurrentColorClick();
+    handleDribbbleIconClick();
 });
 
 // Displaying an informer on initial load
@@ -12,6 +13,7 @@ var displayInformer = function(){
   if (!localStorage.getItem('informed')) {
     setTimeout(function(){
       $('.current-color').addClass('informer').html('click a color box to see its code');
+      $('.dribbble-icon').hide();
       $('.header').addClass('show');
       localStorage.setItem('informed', 1);
       // Hiding the informer
@@ -76,6 +78,7 @@ var handleColorClicks = function(){
 // Updating current color indicator
 var updateCurrentColor = function(color){
     $('.current-color').removeClass('informer').hide().html(color).css('color', color).fadeIn();
+    $('.dribbble-icon').hide().css('background-color', color).fadeIn();
 };
 
 // Hendling clicks on the current color incdicator
@@ -88,7 +91,18 @@ var handleCurrentColorClick = function(){
 
         return false;
     });
-}
+};
+
+// Handling clicks on the Dribbble icon
+var handleDribbbleIconClick = function(){
+    $('.dribbble-icon').on('click', function(event){
+        // Preventing default action
+        event.preventDefault();
+
+        var win = window.open('http://dribbble.com/colors/' + app.currentColor.substring(1), '_blank');
+        win.focus();
+    });
+};
 
 // Getting HEX value for background-color
 $.cssHooks.backgroundColor = {
