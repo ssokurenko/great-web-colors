@@ -86,7 +86,7 @@ uMjU1LDEuODczLDE2LjgxMSwyLjM0NkM4Ny4wMjcsNjYuNCw4MC42MzksNzYuMDUxLDcxLjY3MS
 w4Mi4yMjl6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NC
 jwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8
 L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9
-nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==")
+nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -166,6 +166,8 @@ nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==")
     font-size: 1.5em;
     line-height: 0;
     font-weight: 800;
+    cursor: pointer;
+    cursor: hand;
     &.informer {
       font-size: 1em;
     }
@@ -204,4 +206,12 @@ nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==")
   &.active {
     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
   }
+}
+
+/* adding hand pointer to specific elements */
+.current-color,
+.dribbble-icon,
+.color-item {
+  cursor: pointer;
+  cursor: hand;
 }
