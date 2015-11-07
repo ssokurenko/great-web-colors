@@ -13,7 +13,6 @@ List of color codes in JSON format: [colors.json](http://ssokurenko.github.io/gr
 ### Install Bower and the project dependencies
 
 `npm install -g bower`
-`bower install`
 
 ### Install Grunt:
 
