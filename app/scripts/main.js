@@ -20,7 +20,7 @@ var displayInformer = function(){
       setTimeout(function(){
         $('.header').removeClass('show');
       }, 3000)
-    }, 1000);
+    }, 1100);
   }
 };
 
