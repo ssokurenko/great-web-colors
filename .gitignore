@@ -1,2 +1,8 @@
 app/bower_components/
 dist/
+.idea/.name
+.idea/encodings.xml
+.idea/great-web-colors.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
