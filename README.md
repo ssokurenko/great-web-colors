@@ -4,7 +4,7 @@
 
 ## Web App
 
-[http://ssokurenko.github.io/great-web-colors/](http://ssokurenko.github.io/great-web-colors/)
+[colors.sokurenko.com](http://colors.sokurenko.com)
 
 List of color codes in JSON format: [colors.json](http://ssokurenko.github.io/great-web-colors/colors.json)
 
